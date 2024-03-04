@@ -2,7 +2,7 @@
 GitHub project for submission of IoT assignment
 This README file aims to demonstrate the high-level proposal for the IoT Project. 
 
-# IoT System for Heating Optimization in Buildings
+# IoT System to improbe Bulding Management System (BMS) for Heating Optimization in Buildings
 #### Student Name: Dylan Aylward   Student ID: 20109340, Student Name: Temitope Abogunloko   Student ID: 20109338
 
 This Project aims to integrate application layer technologies such occupancy systems to an overall Building management system. 
@@ -20,4 +20,4 @@ Thus, the overall aim is to integrate different application layers (occupancy sy
 
 ## Tools, Technologies and Equipment
 
-Room sensors that have additional functionality i.e. digital radiator valves, networking layers such as LoRaWAN. Communication layers to improve functionality between application layers & hence imporve the equipment operation. 
+Room sensors that have additional functionality i.e. digital radiator valves, networking layers such as LoRaWAN. Communication layers to improve functionality between application layers & hence improve the equipment operation & systems mentioned. 
