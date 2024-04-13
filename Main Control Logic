@@ -1,0 +1,14 @@
+def control_heating():
+    api_url = "http://example.com/api"
+    rooms = fetch_room_occupancy(f"{api_url}/occupancy")
+    if rooms is not None:
+        for room in rooms:
+            if room['occupied']:
+                # Set comfortable temperature for occupied rooms
+                set_thermostat(room['id'], 22, f"{api_url}/thermostat")
+            else:
+                # Lower temperature for unoccupied rooms
+                set_thermostat(room['id'], 16, f"{api_url}/thermostat")
+
+if __name__ == "__main__":
+    control_heating()
