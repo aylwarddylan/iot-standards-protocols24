@@ -2,7 +2,7 @@
 GitHub project for submission of IoT assignment
 This README file aims to demonstrate the high-level proposal for the IoT Project. 
 
-# A Smart IoT Based Monitoring and Optiisation of Heating Systems in Buildings
+# A Smart IoT Based Monitoring and Optimisation of Heating Systems in Buildings
 IoT Systems refer to networks of interconnected devices with capacities to sense, actuate, and exchange data over the internet. The Internet of Things (IoT) provides the opportunity for physical devices to obtain and send data, interact with their surroundings, and execute different tasks without any human involvement.
 This Project aims to integrate application layer technologies such as occupancy systems into an overall Building management system
 #### Student Name: Dylan Aylward   Student ID: 20109340, Student Name: Temitope Abogunloko   Student ID: 20109338
