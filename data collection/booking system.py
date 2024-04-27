@@ -1,11 +1,23 @@
 import requests
 
-def fetch_room_occupancy(api_url):
-    try:
-        response = requests.get(api_url)
-        response.raise_for_status()
-        # Assume the API returns a list of rooms with their occupancy status and check-in/check-out times
-        return response.json()
-    except requests.RequestException as e:
-        print(f"Failed to retrieve data: {e}")
-        return None
+def fetch_rooms(host_name, hotel_id, token):
+    url = f"https://{host_name}/fof/v1/hotels/{hotel_id}/rooms"
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+    params = {
+        'roomType': 'SUP',
+        'hotelRoomStatus': 'Inspected',
+        'hotelRoomFrontOfficeStatus': 'Vacant'
+    }
+    response = requests.get(url, headers=headers, params=params)
+    return response.json()
+
+# Usage example
+host_name = "example.com"
+hotel_id = "1234"
+token = "your_oauth_token_here"
+rooms = fetch_rooms(host_name, hotel_id, token)
+print(rooms)
+
