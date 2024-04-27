@@ -14,7 +14,7 @@ def fetch_rooms(host_name, hotel_id, token):
     response = requests.get(url, headers=headers, params=params)
     return response.json()
 
-# Usage example
+# criteria reuqired for data collection
 host_name = "example.com"
 hotel_id = "1234"
 token = "your_oauth_token_here"
