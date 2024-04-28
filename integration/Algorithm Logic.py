@@ -1,27 +1,28 @@
 import requests
 
 def fetch_rooms(host_name, hotel_id, token):
-    """Fetches room status from Opera Cloud API."""
+    # Fetches room status from Opera Cloud API
     url = f"https://{host_name}/fof/v1/hotels/{hotel_id}/rooms"
     headers = {
-        'Authorization': f'Bearer {token}',
+        'Authorization': f'Bearer {token}', # specific authorization access required
         'Content-Type': 'application/json'
     }
     params = {
         'roomType': 'SUP',  # Sample room type
         'hotelRoomStatus': 'Inspected',
-        'hotelRoomFrontOfficeStatus': 'Vacant'  # Only fetching vacant rooms here
+        'hotelRoomFrontOfficeStatus': 'Vacant'  # fetching vacant rooms
     }
     response = requests.get(url, headers=headers, params=params)
     return response.json()
 
 def set_target_temperature(serial_number, temperature, access_token, api_host):
-    """Sets the target temperature for a room using the Vicki API."""
+    # Sets the target temperature for a room using the Vicki API
     url = f"https://{api_host}/provider/send"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {access_token}"
+        "Authorization": f"Bearer {access_token}" # specific authorization access required
     }
+    # MCLimate API push
     payload = {
         "serial_number": serial_number,
         "command": "set_target_temperature",
@@ -34,7 +35,7 @@ def set_target_temperature(serial_number, temperature, access_token, api_host):
 
 def main():
     # Configuration variables
-    host_name = "example.com"
+    host_name = "example.com" 
     hotel_id = "1234"
     opera_token = "opera_access_token"
     vicki_token = "vicki_access_token"
@@ -45,7 +46,7 @@ def main():
     
     # Process each room's status
     for room in rooms.get('rooms', []):
-        serial_number = room.get('serial_number')  # Ensure this key exists in your data
+        serial_number = room.get('serial_number')  # Ensure this key exists in data
         room_status = room.get('hotelRoomFrontOfficeStatus')
         
         # Define temperatures based on status
